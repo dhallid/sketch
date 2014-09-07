@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 	// set up 16x16 grid of boxes/divs
+	
 	var cellnum = 0;
 	for (i = 1; i <= 16; i++) {
 		$('tbody').append("<tr>");
@@ -15,10 +16,12 @@ $(document).ready(function(){
 $(function(){
 	$('.cell').hover(
 		function(){ $(this).css('background-color', '#FF0000');
-					$(this).css('color', '#00FFFF');
+					$(this).css('color', '#FFFFFF');
+					$(this).css('font-weight', 'bolder');
 					},
 		function(){ $(this).css('background-color', '#00FFFF'); 
 					$(this).css('color', '#FF8000');
+					$(this).css('font-weight', 'normal');
 					}
 	);
 });
