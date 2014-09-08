@@ -1,17 +1,30 @@
 $(document).ready(function(){
+	var initialHeight = 16;
+	var initialWidth = 16;
+	$('#height').val(initialHeight);
+	$('#width').val(initialWidth);
+	buildGrid(initialHeight,initialWidth);
+});
 
-	// set up 16x16 grid of boxes/divs
-	
+function buildGrid(myHeight, myWidth){	
 	var cellnum = 0;
-	for (i = 1; i <= 16; i++) {
+	for (i = 1; i <= myHeight; i++) {
 		$('tbody').append("<tr>");
-		for (j = 1; j<= 16; j++) {
+		for (j = 1; j<= myWidth; j++) {
 			cellnum = 100 * i + j;
 			$('tbody').append("<td><div class=\"cell\">" + cellnum + "</div></td>");
 		}
 		$('tbody').append("</tr>");
 	}
-});
+};
+
+function myReset(){
+	var newWidth = $('#width').val();
+	var newHeight = $('#height').val();
+	alert("Reset button pressed. H: " + newHeight + ", W: " + newWidth);
+	$('.container tbody tr').remove(); // doesn't behave as expected.
+	buildGrid(newHeight, newWidth);	
+}
 
 $(function(){
 	$('.cell').hover(
