@@ -9,12 +9,11 @@ $(document).ready(function(){
 function buildGrid(myHeight, myWidth){	
 	var cellnum = 0;
 	for (i = 1; i <= myHeight; i++) {
-		$('tbody').append("<tr>");
+		$('tbody.container').append("<tr></tr>");
 		for (j = 1; j<= myWidth; j++) {
 			cellnum = 100 * i + j;
-			$('tbody').append("<td><div class=\"cell\">" + cellnum + "</div></td>");
+			$('tbody.container tr:last').append("<td class=\"cell\">" + cellnum + "</td>");
 		}
-		$('tbody').append("</tr>");
 	}
 };
 
