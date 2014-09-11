@@ -21,7 +21,8 @@ function myReset(){
 	var newWidth = $('#width').val();
 	var newHeight = $('#height').val();
 	alert("Reset button pressed. H: " + newHeight + ", W: " + newWidth);
-	$('.container tbody tr').remove(); // doesn't behave as expected.
+	$('.container tr td').remove();
+	$('.container tr').remove();
 	buildGrid(newHeight, newWidth);	
 }
 
